@@ -32,7 +32,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|name|string|null:false|
+|name|string|null: false|
 
 ### Association
 - has_many :members
