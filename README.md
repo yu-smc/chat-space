@@ -14,13 +14,12 @@
 - has_many :members
 - has_many :messages
 
-
 ## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -45,8 +44,8 @@
 |------|----|-------|
 |body|text|null:false|
 |image|string||
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|user|integer|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
 
 
 ### Association
