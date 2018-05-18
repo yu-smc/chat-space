@@ -5,7 +5,6 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, unique: true|
 |name|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
@@ -31,7 +30,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, unique: true|
 |name|string|null: false|
 
 ### Association
