@@ -1,0 +1,8 @@
+@charset "utf-8";
+.sidebar {
+  &-contents {
+    width: 300px;
+    min-height: calc(100vh - ( 28px + 96px ));
+    background-color:#2f3e51;
+  }
+}
