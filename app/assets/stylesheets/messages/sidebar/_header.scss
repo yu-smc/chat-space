@@ -1,43 +1,40 @@
 @charset "utf-8";
 .sidebar {
-  &-header {
-    vertical-align: middle;
-    display: table-cell;
+  &__wrapperForHeader {
+    display: table;
+    position: fixed;
+    width: 300px;
     height: 96px;
-     width: 300px;
-    background-color: #253141;
-    padding: 0 20px;
-    vertical-align: middle;
-    &__user{
-      display:inline-block;
-      line-height: 21px;
-      float:left;
-      font-weight: bold;
-      width: 80%;
-      & a{
-      color: white;
-      }
-    }
-    &__menu{
-      display: -webkit-flex;
-      display: flex;
-      -webkit-justify-content: flex-end;
-      justify-content: flex-end;
-      width: 20%;
-      & li{
-        float: right;
+    .header {
+      display: table-cell;
+      background-color: #253141;
+      vertical-align: middle;
+      padding: 0 20px;
+      &__user{
+        display:inline-block;
+        line-height: 21px;
+        width: 80%;
+        float:left;
+        font-weight: bold;
+        & a{
         color: white;
-        .fa.fa-edit {
-          padding-right: 5px;
+        }
+      }
+      &__menu{
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        width: 20%;
+        & li{
+          float: right;
+          color: white;
+          .fa.fa-edit {
+            padding-right: 5px;
+          }
         }
       }
     }
   }
-  &-clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    font-size:0;
-    clear: both;
-  }
 }
+

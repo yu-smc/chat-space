@@ -1,0 +1,26 @@
+@charset "utf-8";
+.main {
+  &__wrapperForHeader {
+    display: table;
+    position: fixed;
+    border-bottom: solid 1px #eeeeee;
+    .header {
+      width: calc(100vw - 300px);
+      padding: 0 40px;
+      &__left {
+        p.current-group {
+          margin-top: 35px;
+          color: #333333;
+          font-size: 20px;
+        }
+        p.members {
+          margin-top: 15px;
+          color: #999999;
+        }
+      }
+    }
+  }
+}
+
+
+

@@ -2,7 +2,24 @@
 .sidebar {
   &-contents {
     width: 300px;
-    min-height: calc(100vh - ( 28px + 96px ));
+    min-height: calc(100vh - 28px);
     background-color:#2f3e51;
+    padding:96px 20px 0 20px;
+    .groups-item {
+      &__name,
+      &__message {
+        color: white;
+      }
+
+      &__name {
+        padding-top: 20px;
+        padding-bottom: 5px;
+        font-size: 15px;
+      }
+      &__message {
+        padding-bottom: 40px;
+        font-size: 11px;
+      }
+    }
   }
 }
