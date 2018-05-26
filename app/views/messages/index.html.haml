@@ -4,5 +4,15 @@
     /仮置き
     .notice-header
       = render :partial => "parts/notice-header"
-    .sidebar
-      = render :partial => "sidebar"
+    .wrapper
+      .sidebar
+        = render :partial => "sidebar"
+      .main
+        .main__wrapperForHeader
+          .header
+            .header__left
+              %p.current-group group1
+              %p.members Members: yu-smc
+            .header__right
+              %button.edit Edit
+
