@@ -19,6 +19,15 @@ html{
     TODO test putting a class on HEAD.
         - Fails on FF.
 */
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 body,
 div,
 dl,
@@ -122,5 +131,7 @@ select {
 legend {
     color:#000;
 }
+
+
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
