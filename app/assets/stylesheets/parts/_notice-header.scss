@@ -1,0 +1,10 @@
+.notice-header {
+  height: 24px;
+  width: 100%;
+  background-color: #38AEF0;
+  &-text p{
+    margin: 0;
+    text-align: center;
+    color: white;
+  }
+}
