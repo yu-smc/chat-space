@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.main-wrapperForContents {
+  margin: 100px 40px 0 40px;
+  .messages {
+    &-info {
+      display: flex;
+      -webkit-display: flex;
+      align-items: center;
+      -webkit-align-items: center;
+      padding-top: 46px;
+      padding-bottom: 10px;
+      &__user {
+        margin-right: 10px;
+        color: $_color-gray;
+        font-size: 16px;
+      }
+      &__date {
+        color: $_color-lightGray;
+        font-size: 12px;
+      }
+    &-text {
+      padding-bottom: 40px;
+      color: $_color-gray;
+      font-size:  14px;
+    }
+    }
+  }
+}

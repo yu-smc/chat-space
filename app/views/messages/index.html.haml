@@ -9,9 +9,25 @@
         = render :partial => "sidebar"
       .main
         .main__wrapperForHeader
-          .header
+          .header.clearfix
             .header__left
               %p.current-group group1
               %p.members Members: yu-smc
             .header__right
               %a#button.edit Edit
+        .main-wrapperForContents
+          .messages
+            .messages-info
+              %p.messages-info__user user1
+              %p.messages-info__date 2018/01/01/00:00
+            .messages-text
+              %p hogehoge
+          .messages
+            .messages-info
+              %p.messages-info__user user2
+              %p.messages-info__date 2018/01/01/00:0
+            .messages-text
+              %p fugafuga
+
+
+
