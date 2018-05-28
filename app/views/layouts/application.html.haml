@@ -13,6 +13,7 @@
     .wrapper
       .sidebar
         = render :partial => "parts/sidebar"
-      .main
+      .main.clearfix
         = yield
-
+        .form
+          = render :partial => "parts/form"
