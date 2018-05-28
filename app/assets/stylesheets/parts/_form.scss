@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.form {
+  background-color: #DDDDDD;
+  &-items {
+    display: flex;
+    padding: 20px 40px;
+    width: calc(100vw - 300px);
+    &__input {
+      position: relative;
+      width: calc(100% - 15px - 97.25px);
+      margin: 0;
+      &-inner {
+        height: 50px;
+        width: 100%;
+        border: none;
+      }
+      &-icon {
+        position: absolute;
+        bottom: 13px;
+        right: 10px;
+      }
+    }
+    &__button {
+      @include button();
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px
+    }
+  }
+}
