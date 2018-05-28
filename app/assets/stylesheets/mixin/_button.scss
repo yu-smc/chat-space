@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+#button-edit {
+  display: inline-block;
+  line-height: 40px;
+  vertical-align: middle;
+  border: solid 1px $_color-lightBlue;
+  color: $_color-lightBlue;
+  padding: 0 20px;
+  }
+
+@mixin button($bg-color:$_color-lightBlue, $border:none, $font-size:16px, $color:#FFFFFF) {
+  background-color: $_color-lightBlue;
+  border: $border;
+  font-size: $font-size;
+  color: $color;
+}
