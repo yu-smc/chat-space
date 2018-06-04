@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %meta{ content: "text/html; charset=UTF-8", "http-equiv": "Content-Type" }/
+    %meta{ content : "text/html; charset=UTF-8", "http-equiv" : "Content-Type"}/
     %title ChatSpace
     = csrf_meta_tags
     = csp_meta_tag
@@ -9,11 +9,11 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .notice-header
-      = render "parts/notice-header"
+      = render :partial => "parts/notice-header"
     .wrapper
       .sidebar
-        = render "parts/sidebar"
+        = render :partial => "parts/sidebar"
       .main.clearfix
         = yield
         .form
-          = render "parts/form"
+          = render :partial => "parts/form"
