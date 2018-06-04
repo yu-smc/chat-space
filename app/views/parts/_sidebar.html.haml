@@ -2,11 +2,12 @@
 .sidebar__wrapperForHeader
   .header
     .header__user
-      %a user-name
+      = current_user.name
     .header__menu
       %ul.header__menu-icons
         %li
-          = fa_icon "cog"
+          = link_to edit_user_path(current_user) do
+            = fa_icon "cog"
         %li
           = fa_icon "edit"
 .sidebar-contents
