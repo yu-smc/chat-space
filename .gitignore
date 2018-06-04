@@ -58,6 +58,5 @@ node_modules/
 /log/*.log
 /tmp
 
-/config/database.yml
-/Gemfile.lock
+
 
