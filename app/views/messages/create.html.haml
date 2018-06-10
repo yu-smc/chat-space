@@ -1,0 +1,28 @@
+!!!
+.wrapper
+  .sidebar
+    = render 'parts/sidebar'
+  .main.clearfix
+    .main__wrapperForHeader
+      .header.clearfix
+        .header__left
+          %p.current-group group1
+          %p.members Members: yu-smc
+        .header__right
+          %a.button-edit Edit
+    .main-wrapperForContents
+      .message
+        .message-info
+          %p.message-info__user user1
+          %p.message-info__date 2018/01/01/00:00
+        .message-text
+          %p hogehoge
+      .message
+        .message-info
+          %p.message-info__user user2
+          %p.message-info__date 2018/01/01/00:0
+        .message-text
+          %p fugafuga
+
+    .form
+    = render partial: 'form', locals: { message: @message }

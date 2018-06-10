@@ -1,8 +1,12 @@
 !!!
 .form-items
-  .form-items__input
-    %input.form-items__input-inner
-    .form-items__input-icon
-      = fa_icon "image"
-  %button.form-items__button Send
+  = form_for message do |f|
+    .form-items__input
+      %input.form-items__input-inner{for: "upload-icon"}
+        %label.form-items__input-icon
+        =fa_icon "image"
+        / = f.file_field :image, id: "upload-icon"
+    =f.submit class: 'form-items__button'
+
+
 

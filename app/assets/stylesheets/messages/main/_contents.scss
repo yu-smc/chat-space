@@ -1,31 +1,33 @@
 @charset "utf-8";
 
 .main-wrapperForContents {
-  min-height: calc(100vh - 28px - 100px - 90px);
+  height: calc(100vh - 28px - 100px - 90px);
   padding: 46px  0 40px 40px;
   margin-top: 100px;
   background-color: #FAFAFA;
-  .message {
-    &-info {
+  .messages{
+    .message {
+      &-info {
       display: flex;
       -webkit-display: flex;
       align-items: center;
       -webkit-align-items: center;
       padding-bottom: 10px;
-      &__user {
-        margin-right: 10px;
+        &__user {
+          margin-right: 10px;
+          color: $_color-gray;
+          font-size: 16px;
+        }
+        &__date {
+          color: $_color-lightGray;
+          font-size: 12px;
+        }
+      }
+      &-text {
+        margin-bottom: 40px;
         color: $_color-gray;
-        font-size: 16px;
+        font-size:  14px;
       }
-      &__date {
-        color: $_color-lightGray;
-        font-size: 12px;
-      }
-    }
-    &-text {
-      margin-bottom: 40px;
-      color: $_color-gray;
-      font-size:  14px;
     }
   }
 }

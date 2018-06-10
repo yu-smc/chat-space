@@ -16,9 +16,7 @@
         width: 80%;
         float:left;
         font-weight: bold;
-        & a{
         color: white;
-        }
       }
       &__menu{
         display: -webkit-flex;
@@ -29,6 +27,9 @@
         & li{
           float: right;
           color: white;
+          & a:visited{
+            color: white;
+          }
           .fa.fa-edit {
             padding-right: 5px;
           }
