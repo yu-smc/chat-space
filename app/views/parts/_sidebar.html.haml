@@ -13,12 +13,11 @@
 .sidebar-contents
   /仮置き
   .sidebar-contents__groups
-    %a.groups
-      %p.groups__name group1
-      %p.groups__message ここに最新メッセージを表示
-    %a.groups
-      %p.groups__name group2
-      %p.groups__message ここに最新メッセージを表示
-    %a.groups
-      %p.groups__name group3
-      %p.groups__message ここに最新メッセージを表示
+    -current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message
+

@@ -1,0 +1,9 @@
+!!!
+.form-items
+  = form_for [@group, @message] do |f|
+    .form-items__input
+      =f.text_field :body, class: 'form-items__input-inner'
+      %label.form-items__input-icon
+        =fa_icon "image"
+        = f.file_field :image, id: "upload-icon"
+    =f.submit class: 'form-items__button'
