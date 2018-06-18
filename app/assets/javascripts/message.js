@@ -1,8 +1,3 @@
-$(function scrollToNewest(){
-
-});
-
-
 $(function() {
   function buildHTML(message){
     var insertBody = '';
@@ -42,11 +37,10 @@ $(function() {
       contentType: false
     })
     .done(function(data){
-      var $messages = $('.main-wrapperForContents');
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form-items__input-inner').reset();
-      $messages.animate({ scrollTop: $messages.get(0).scrollHeight },'fast');
+      $("#new_message").get(0).reset();
+      scrollToNewest();
     })
     .fail(function(){
       alert('エラーが発生しました。入力内容をご確認ください。');
@@ -54,4 +48,8 @@ $(function() {
   return false;
   })
 });
+
+function scrollToNewest(){
+ $('.main-wrapperForContents').animate({ scrollTop: $('.main-wrapperForContents').get(0).scrollHeight },'fast');
+};
 
