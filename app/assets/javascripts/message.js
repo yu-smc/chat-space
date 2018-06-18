@@ -1,3 +1,8 @@
+$(function scrollToNewest(){
+
+});
+
+
 $(function() {
   function buildHTML(message){
     var insertBody = '';
@@ -40,7 +45,7 @@ $(function() {
       var $messages = $('.main-wrapperForContents');
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form-items__input-inner').val('');
+      $('.form-items__input-inner').reset();
       $messages.animate({ scrollTop: $messages.get(0).scrollHeight },'fast');
     })
     .fail(function(){
