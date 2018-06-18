@@ -1,10 +1,6 @@
 $(function() {
   function buildHTML(message){
-    var insertBody = '';
     var insertImage = '';
-    if (message.body) {
-      insertBody = `<p>${message.body}</p>`;
-    }
     if (message.image.url) {
       insertImage = `<img src="${message.image.url}" class="message-image">`;
     }
@@ -18,7 +14,7 @@ $(function() {
                     </p>
                   </div>
                   <div class="message-text">
-                    ${insertBody}
+                    <p>${message.body}</p>
                     ${insertImage}
                   </div>
                 </div>`
@@ -39,7 +35,7 @@ $(function() {
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $("#new_message").get(0).reset();
+      $("#new_message")[0].reset();
       scrollToNewest();
     })
     .fail(function(){
