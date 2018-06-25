@@ -9,7 +9,8 @@
           = link_to edit_user_path(current_user) do
             = fa_icon "cog"
         %li
-          = fa_icon "edit"
+          = link_to new_group_path(current_user) do
+            = fa_icon "edit"
 .sidebar-contents
   /仮置き
   .sidebar-contents__groups
