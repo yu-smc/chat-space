@@ -13,14 +13,14 @@
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
+      = f.label :チャットメンバーを追加, class: 'chat-group-form__label'
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input#user-search-field.chat-group-form__input{ placeholder: "追加したいユーザー名を入力してください", type: "text", name: "keyword"}
+        = f.text_field :name, name: 'keyword', class: 'chat-group-form__input', id: 'user-search-field', placeholder: ' 追加したいユーザー名を入力してください', value: ""
       #user-search-result
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+      = f.label :チャットメンバー, class: 'chat-group-form__label'
     .chat-group-form__field--right
       #chat-group-users
         - group.group_users.each do |group_user|
@@ -33,3 +33,4 @@
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
+
