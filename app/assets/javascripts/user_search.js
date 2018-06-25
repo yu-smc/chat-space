@@ -17,30 +17,33 @@ $(function(){
                 </div>`
     $("#chat-group-users").append(html);
   }
-  var ajaxSearch = function(input){
-    $("#user-search-result").empty();
-    if (input != ''){
-      $.ajax({
-        url: '/users',
-        type: 'GET',
-        data: { keyword: input },
-        dataType: 'json',
-      })
-      .done(function(data){
-        if (data.length !== 0) {
-          data.forEach(function(user){
-            appendUser(user);
-          });
-        }
-      })
-      .fail(function(){
-        alert('検索できませんでした。');
-      })
-    }
-  };
+  var keyupStack = [];
   $("#user-search-field").on('keyup', function(){
     var input = $.trim($(this).val());
-    setTimeout(function(){ajaxSearch(input)}, 500);
+    $("#user-search-result").empty();
+    keyupStack.push(1);
+    setTimeout(function(){
+      keyupStack.pop();
+      if ( input != '' && keyupStack.length === 0){
+        $.ajax({
+          url: '/users',
+          type: 'GET',
+          data: { keyword: input },
+          dataType: 'json',
+        })
+        .done(function(data){
+          if (data.length !== 0) {
+            data.forEach(function(user){
+
+              appendUser(user);
+            });
+          }
+        })
+        .fail(function(){
+          alert('検索できませんでした。');
+        })
+      }
+    }.bind(this), 500);
   });
   $('#user-search-result').on('click', ".user-search-add", function(){
     var user_id = $(this).attr('data-user-id'),
