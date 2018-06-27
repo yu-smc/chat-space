@@ -4,7 +4,7 @@ $(function() {
     if (message.image.url) {
       insertImage = `<img src="${message.image.url}" class="message-image">`;
     }
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message-info">
                     <p class="message-info__user">
                       ${message.user_name}
