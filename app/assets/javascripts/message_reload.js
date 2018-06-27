@@ -21,23 +21,21 @@ $(document).on('turbolinks:load', function() {
       </div>`
     return html;
   }
-
+  var latest_id = $('.messages .message:last-child').data('messageId');
   var interval = setInterval(function(){
-    var latest_id = $('.messages .message:last-child').data('messageId');
     var insertHTML = '';
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
         url: location.href,
         dataType: 'json',
         data: {
-        message: { id: latest_id }
+          message: { id: latest_id }
         },
       })
       .done(function(data){
-        console.log(data);
         if (Array.isArray(data)) {
           data.forEach(function(message){
-            insertHTML += buildHTML(message);
+            insertHTML = buildHTML(message);
           });
         }
         $('.messages').append(insertHTML);
@@ -49,9 +47,11 @@ $(document).on('turbolinks:load', function() {
     } else {
       clearInterval(interval);
     }
+    latest_id = $('.messages .message:last-child').data('messageId');
+    console.log(latest_id);
   }, 5000);
 })
 
 function scrollToNewest(){
- $('.main-wrapperForContents').animate({ scrollTop: $('.main-wrapperForContents').get(0).scrollHeight },'fast');
+  $('.main-wrapperForContents').animate({ scrollTop: $('.main-wrapperForContents').get(0).scrollHeight },'fast');
 };
