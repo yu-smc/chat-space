@@ -21,8 +21,8 @@ $(document).on('turbolinks:load', function() {
       </div>`
     return html;
   }
+  var id = $('.messages .message:last-child').data('messageId');
   var interval = setInterval(function(){
-    var id = $('.messages .message:last-child').data('messageId');
     var insertHTML = '';
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
@@ -44,6 +44,7 @@ $(document).on('turbolinks:load', function() {
     } else {
       clearInterval(interval);
     }
+    id = $('.messages .message:last-child').data('messageId');
   }, 5000);
 })
 
