@@ -23,7 +23,6 @@ $(document).on('turbolinks:load', function() {
   }
   var interval = setInterval(function(){
     var id = $('.messages .message:last-child').data('messageId');
-    console.log(id);
     var insertHTML = '';
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
@@ -31,7 +30,6 @@ $(document).on('turbolinks:load', function() {
         dataType: 'json',
       })
       .done(function(data){
-        console.log(data);
         data.forEach(function(message){
           if (message.id > id) {
             insertHTML += buildHTML(message);
