@@ -34,9 +34,6 @@ $(document).on('turbolinks:load', function() {
         },
       })
       .done(function(data){
-        $(document).ready(function(){
-
-        })
         console.log(data);
         if (Array.isArray(data)) {
           data.forEach(function(message){
