@@ -49,7 +49,6 @@ $(document).on('turbolinks:load', function() {
     } else {
       clearInterval(interval);
     }
-    // latest_id = $('.messages .message:last-child').data('messageId');
   }, 5000);
 })
 
