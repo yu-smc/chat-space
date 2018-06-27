@@ -22,16 +22,16 @@ $(document).on('turbolinks:load', function() {
     return html;
   }
   var interval = setInterval(function(){
-    var id = $('.messages .message:last-child').data('messageId');
+    var screenMessagesLength = $('.message').length;
     var insertHTML = '';
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
         url: location.href,
         dataType: 'json',
       })
-      .done(function(data){
-        data.forEach(function(message){
-          if (message.id > id) {
+      .done(function(messages){
+        messages.forEach(function(message){
+          if ( messages.indexOf(message) > screenMessagesLength - 1) {
             insertHTML += buildHTML(message);
           }
         });
