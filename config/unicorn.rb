@@ -4,8 +4,8 @@ worker_processes 1
 
 working_directory app_path
 pid "#{app_path}/tmp/pids/unicorn.pid"
-stderr_path "#{app_path}/log/unicorn.stderr.log"
-stdout_path "#{app_path}/log/unicorn.stdout.log"
+stderr_path File.expand_path('../../log/unicorn_stderr.log', __FILE__)
+stdout_path File.expand_path('../../log/unicorn_stdout.log', __FILE__)
 
 listen 3000
 timeout 60
